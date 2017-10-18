@@ -1,0 +1,46 @@
+@font-face { 
+font-family: "dotmat-reg"; 
+src: url("Digi-Regular.otf"); 
+font-weight: normal;
+}
+@font-face { 
+font-family: "dotmat-sml"; 
+src: url("Digi-SmallCaps.otf"); 
+font-weight: lighter;
+}
+
+.clock-digits {
+    font-family: "dotmat-reg";
+    font-size: 55pt;
+    font-weight: normal;
+    color: #888;
+    text-shadow: 0px 4px 20px rgba(150, 150, 150, 1);
+    margin: auto;
+    display: flex;
+}
+.digits {
+    margin: 0 auto;
+    display: flex;
+    padding-left: 18px;
+    letter-spacing: 8px;
+}
+.digits {
+    visibility: hidden;
+}
+.clock-digits span {
+    display: inline-block;
+}
+.clock-digits span::before {
+    content: ':';
+}
+.clock-digits span:first-child::before {
+    content: '';
+}
+.digits span.invisible::before {
+    visibility: hidden;
+}
+
+#digit-qui {
+    font-family: "dotmat-sml";
+    font-weight: lighter;
+}

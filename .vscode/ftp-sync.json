@@ -1,0 +1,16 @@
+{
+    "remotePath": "/lab/fifthclock",
+    "host": "ftp22.world4you.com",
+    "username": "ftp1851692",
+    "password": "m+djfg5",
+    "port": 21,
+    "protocol": "ftp",
+    "uploadOnSave": true,
+    "passive": false,
+    "debug": false,
+    "privateKeyPath": null,
+    "ignore": [
+        "\\.vscode",
+        "\\.git"
+    ]
+}

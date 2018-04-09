@@ -40,7 +40,13 @@ font-weight: lighter;
     visibility: hidden;
 }
 
-#digit-qui {
+.digits .invisible {
+    display: none;
+}
+
+
+#digit-qui,
+#digit-hex {
     font-family: "dotmat-sml";
     font-weight: lighter;
 }

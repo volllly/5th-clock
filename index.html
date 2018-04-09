@@ -6,7 +6,8 @@
         <link rel="stylesheet" href="style.css">
         <link rel="stylesheet" href="style-circle.css">
         <link rel="stylesheet" href="style-digits.css">
-        <script src="script.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>        
+        <script src="fifthclock.js"></script>
     </head> 
     <body>
         <div class="sitewrap">
@@ -76,57 +77,36 @@
                     <span id="digit-tri">0</span>
                     <span id="digit-tetra">0</span>
                     <span id="digit-qui">0</span>
+                    <span id="digit-hex">0</span>
                 </div>
             </div>
-            <input type="time" id="userinput" value="00:00:00" step="1" />
         </div>
         <div class="sidebar">
             <ul class="sidebar-list">
-                <li class="sidebar-item">
-                    <select class="sidebar-select sidebar-anchor">
-                        <option>Timezone</option>
-                        <option>Vienna</option>
-                        <option>London</option>
-                    </select>
-                </li>
-                <li class="sidebar-item"><input type="time" step="1" class="sidebar-input sidebar-anchor" /></li>
-                <li class="sidebar-item"><input type="time" class="sidebar-input sidebar-anchor" /></li>
-                <li class="sidebar-item"><input type="checkbox" id="doublenotationcheckbox" class="sidebar-input sidebar-anchor" /><label for="doublenotationcheckbox">25th Notation</label></li>
+                <li class="sidebar-item"><input type="time" step="1" id="userinput" class="sidebar-input sidebar-anchor" ></li>
+                <li class="sidebar-item"><input type="checkbox" id="doublenotationcheckbox"><label for="doublenotationcheckbox" class="sidebar-anchor">Notation</label></li>
                 <li class="sidebar-item"><a href="#" class="sidebar-anchor">About</a></li>
             </ul>
         </div>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-        <script src="script.js"></script>
         <script type="text/javascript">
-            $(function(){
-            var analogclock = new analogClock();
-
-            window.setInterval(function(){ 
-
-            analogclock.run(); 
-
-            }, 1106);
-
-            });
-
-            $(document).ready(function() {
-
-            function toggleSidebar() {
-                $(".button").toggleClass("active");
-                $(".sitewrap").toggleClass("move-to-right");
-                $(".sidebar-item").toggleClass("active");
-            }
-
-            $(".button").on("click tap", function() {
-                toggleSidebar();
-            });
-
-            $(document).keyup(function(e) {
-                if (e.keyCode === 27) {
-                toggleSidebar();
+            $(document).ready(() => {
+                var fc = new fifthclock();
+                
+                function toggleSidebar() {
+                    $(".button").toggleClass("active");
+                    $(".sitewrap").toggleClass("move-to-right");
+                    $(".sidebar-item").toggleClass("active");
                 }
-            });
 
+                $(".button").on("click tap", () => {
+                    toggleSidebar();
+                });
+
+                $(document).keyup((e) => {
+                    if(e.keyCode === 27) {
+                    toggleSidebar();
+                    }
+                });
             });
         </script>
     </body>
